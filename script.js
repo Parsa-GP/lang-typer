@@ -15,8 +15,8 @@ var langs;
 window.addEventListener('load', function () {
     e = document.getElementById("input")
     
-    langsInit = {"fa": initFa, "jp": initJp};
-    langs = {"fa": tofa, "jp": tojp};
+    langsInit = {"fa": initFa,  "jp": initJp};
+    langs =     {"fa": tofa,    "jp": tojp  };
 
     if (lang in langs) {
         langsInit[lang]();
@@ -25,6 +25,21 @@ window.addEventListener('load', function () {
 
         document.getElementById("alrt").style.display = "flex";
     }
+
+    e.setAttribute("placeholder", placeholder);
+
+    // Build the button HTML dynamically using a loop
+    let buttonHtml = "";
+    for (const diacritic of diacritics) {
+      buttonHtml += `<input type="button" onclick="kb('${diacritic.char}')" value="${diacritic.char}" title="${diacritic.title}">`;
+    }
+  
+    // Set the footer content
+    document.getElementById("footer").innerHTML = buttonHtml;
+
+    // Set the page title
+    document.title = title;
+
 })
 
 function kb(item) {
