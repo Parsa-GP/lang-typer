@@ -11,19 +11,18 @@ function initFa() {
         { char: "ٍ", title: "tanvin kasre" },
         { char: "ٌ", title: "tanvin zame" },
         { char: "ْ", title: "sokoon" },
+        { char: "ٓ", title: "kolah" },
+        { char: "ٰ", title: "alef koochak" },
+        { char: "ٔ", title: "hamze koochak" },
         { char: "«", title: "giyomeh baz" },
         { char: "»", title: "giyomeh baste" },
         { char: "ئ", title: "ye ba hamze" },
         { char: "ؤ", title: "vav ba hamze" },
-        { char: "ٓ", title: "kolah" },
-        { char: "ٰ", title: "alef koochak" },
-        { char: "‌", title: "no-space space" },
-        { char: "ٔ", title: "hamze koochak" },
         { char: "ء", title: "hamze" },
-        { char: "﷼", title: "rial" },
         { char: "×", title: "zarb" },
-        { char: "٪", title: "darsad" },
-        { char: "؟", title: "alamate soal" },
+        { char: "÷", title: "taqsim" },
+        { char: "﷼", title: "rial" },
+        { char: "‌", title: "no-space space" },
     ];
 }
   
@@ -85,6 +84,9 @@ function tofa(text) {
 
     text = text.replace(/قh/g, "غ");
     text = text.replace(/گh/g, "ق");
+    
+    text = text.replace(/قq/g, "غ");
+    text = text.replace(/q/g, "ق");
 
     text = text.replace(/هh/g, "ح");
     text = text.replace(/h/g, "ه");
@@ -104,11 +106,13 @@ function tofa(text) {
     text = text.replace(/m/g, "م");
     text = text.replace(/n/g, "ن");
     text = text.replace(/v/g, "و");
+    text = text.replace(/u/g, "او");
     text = text.replace(/w/g, "و");
     text = text.replace(/y/g, "ی");
 
     text = text.replace(/,/g, "،");
-
+    text = text.replace(/%/g, "٪");
+    text = text.replace(/\?/g, "؟");
 
     return text;
 }
