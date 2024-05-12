@@ -13,6 +13,8 @@ var lang = urlParams.get('lang');
 var langs;
 
 window.addEventListener('load', function () {
+    e = document.getElementById("input")
+    
     langsInit = {"fa": initFa, "jp": initJp};
     langs = {"fa": tofa, "jp": tojp};
 
