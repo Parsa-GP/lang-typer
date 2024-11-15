@@ -2,7 +2,7 @@ function initJp() {
     placeholder = "素早い茶色のキツネが怠惰な犬を飛び越える。"
     title = "Japanese!!"
 
-    const diacritics = [
+    diacritics = [
         { char: "〜", title: "波ダッシュ nami dasshu" },
         { char: "・", title: "中黒 nakaguro" },
         { char: "ー", title: "長音符 chōonpu" },

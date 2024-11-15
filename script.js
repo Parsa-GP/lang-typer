@@ -28,16 +28,12 @@ window.addEventListener('load', function () {
 
     e.setAttribute("placeholder", placeholder);
 
-    // Build the button HTML dynamically using a loop
     let buttonHtml = "";
     for (const diacritic of diacritics) {
       buttonHtml += `<input type="button" onclick="kb('${diacritic.char}')" value="${diacritic.char}" title="${diacritic.title}">`;
     }
   
-    // Set the footer content
     document.getElementById("footer").innerHTML = buttonHtml;
-
-    // Set the page title
     document.title = title;
 
 })

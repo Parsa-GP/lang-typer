@@ -5,7 +5,6 @@
 }
 
 :root {
-    --bgc: #222;
     --txt: #eee;
     --prm: #8a2be2;
 }
@@ -13,14 +12,14 @@
 #input {
     font-size: 30px;
     font-family: sans-serif;
-    height: max-content;
+    height: calc(100vh - 21px);
     outline: 0;
     padding: 10px;
-    background: var(--bgc);
+    padding-bottom: 40vh;
+    background: #222;
     color: var(--txt);
     position: absolute;
     width: calc(100vw - 20px);
-    height: calc(100vh - 17px - 50px);
     border: 0;
     resize: none;
 }
@@ -28,22 +27,26 @@
 #footer {
     bottom: 0;
     min-height: 30px;
-    width: calc(100vw - 21px);
-    background: var(--bgc);
+    width: fit-content;
+    background: #222b;
     position: fixed;
-    border-top: 2px solid var(--prm);
+    border: 2px solid var(--prm);
+    border-top: 3px solid var(--prm);
+    border-bottom: 0;
     padding: 10px;
     display: flex;
     justify-content: center;
     grid-gap: 8px;
     border-radius: 5px 5px 0 0;
     flex-wrap: wrap;
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(5px);
 }
 
 #footer > input {
-    height: 28px;
     border: 1px solid var(--prm);
-    background: none;
+    background: #222;
     color: white;
     padding: 0 4px;
     cursor: pointer;
